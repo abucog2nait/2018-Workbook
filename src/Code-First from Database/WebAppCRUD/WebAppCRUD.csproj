@@ -17,7 +17,8 @@
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort>44389</IISExpressSSLPort>
+    <IISExpressSSLPort>
+    </IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -174,7 +175,9 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
+    <Content Include="Admin\ViewCategories.aspx" />
     <Content Include="Admin\ViewProducts.aspx" />
+    <Content Include="Admin\ViewSuppliers.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -335,12 +338,26 @@
     <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Admin\ViewCategories.aspx.cs">
+      <DependentUpon>ViewCategories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ViewCategories.aspx.designer.cs">
+      <DependentUpon>ViewCategories.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Admin\ViewProducts.aspx.cs">
       <DependentUpon>ViewProducts.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Admin\ViewProducts.aspx.designer.cs">
       <DependentUpon>ViewProducts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ViewSuppliers.aspx.cs">
+      <DependentUpon>ViewSuppliers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ViewSuppliers.aspx.designer.cs">
+      <DependentUpon>ViewSuppliers.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">

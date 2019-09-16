@@ -6,7 +6,7 @@ using System.Web;
 using WestWindSystem.DAL;
 using WestWindSystem.Entities;
 
-namespace WebAppCRUD.BLL
+namespace WestWindSystem.BLL
 {
     [DataObject]
     public class CRUDController
