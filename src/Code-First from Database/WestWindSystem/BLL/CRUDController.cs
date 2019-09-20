@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
-using System.Web;
+using System.Text;
+using System.Threading.Tasks;
 using WestWindSystem.DAL;
 using WestWindSystem.Entities;
 
@@ -26,9 +27,21 @@ namespace WestWindSystem.BLL
         [DataObjectMethod(DataObjectMethodType.Select)]
         public List<Supplier> ListSuppliers()
         {
-            using (var context = new WestWindContext())
+            using(var context = new WestWindContext())
             {
-                return context.Suppliers.ToList();
+                // .Include(string) will "eager load" the Address information
+                // for the supplier.
+                return context.Suppliers.Include(nameof(Supplier.Address)).ToList();
+            }
+        }
+
+        [DataObjectMethod(DataObjectMethodType.Insert)]
+        public void AddSupplier(Supplier item)
+        {
+            using(var context = new WestWindContext())
+            {
+                context.Suppliers.Add(item);
+                context.SaveChanges();
             }
         }
         #endregion
@@ -37,7 +50,7 @@ namespace WestWindSystem.BLL
         [DataObjectMethod(DataObjectMethodType.Select)]
         public List<Category> ListCategories()
         {
-            using (var context = new WestWindContext())
+            using(var context = new WestWindContext())
             {
                 return context.Categories.ToList();
             }
@@ -48,13 +61,11 @@ namespace WestWindSystem.BLL
         [DataObjectMethod(DataObjectMethodType.Select)]
         public List<Address> ListAddresses()
         {
-            using (var context = new WestWindContext())
+            using(var context = new WestWindContext())
             {
                 return context.Addresses.ToList();
             }
         }
         #endregion
-
     }
-
 }

@@ -6,6 +6,7 @@ namespace WestWindSystem.DAL
     using System.Linq;
     using WestWindSystem.Entities;
 
+
     public partial class WestWindContext : DbContext
     {
         public WestWindContext()

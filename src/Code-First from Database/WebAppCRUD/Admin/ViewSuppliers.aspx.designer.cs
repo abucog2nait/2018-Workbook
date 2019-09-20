@@ -13,21 +13,30 @@ namespace WebAppCRUD.Admin {
     public partial class ViewSuppliers {
         
         /// <summary>
-        /// SupplierRepeater control.
+        /// SupplierListView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater SupplierRepeater;
+        protected global::System.Web.UI.WebControls.ListView SupplierListView;
         
         /// <summary>
-        /// SupplierDataSource control.
+        /// SuppliersDataSource control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource SupplierDataSource;
+        protected global::System.Web.UI.WebControls.ObjectDataSource SuppliersDataSource;
+        
+        /// <summary>
+        /// AddressDataSource control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ObjectDataSource AddressDataSource;
     }
 }

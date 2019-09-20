@@ -1,5 +1,7 @@
 # DMIT-2018 - **Workbook** (Sep 2019)
 
+## Section A02
+
 This repository is a **Workbook Template Repository** (click the green *Use this template* button above) containing demos, tutorials, and practice materials. You can find a list of the materials in the [**src folder**](./src/ReadMe.md).
 
 Additionally, you can find online notes at the course's [Moodle site](https://moodle.nait.ca) and on the unofficial [website notes](https://dmit-2018.github.io). Also be sure to checkout out the topical [**Learning Outcomes**](https://dmit-2018.github.io/about/LOGs.html) used in class.
