@@ -51,6 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\CRUDController.cs" />
+    <Compile Include="BLL\SupplyChainManagement.cs" />
     <Compile Include="Entities\Address.cs" />
     <Compile Include="Entities\BuildVersion.cs" />
     <Compile Include="Entities\Category.cs" />
@@ -68,6 +69,8 @@
     <Compile Include="Entities\Supplier.cs" />
     <Compile Include="Entities\Territory.cs" />
     <Compile Include="DAL\WestWindContext.cs" />
+    <Compile Include="POCOs\Class1.cs" />
+    <Compile Include="POCOs\SupplierProduct.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
