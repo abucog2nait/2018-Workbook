@@ -13,12 +13,12 @@ namespace WebAppCRUD.Admin
         {
 
         }
-        
-        protected void CheckForException(object sender, ObjectDataSourceStatusEventArgs e)
+
+        protected void CheckForExceptions(object sender, ObjectDataSourceStatusEventArgs e)
         {
-            // make sure to change the name ^
+            // Works for the OnInsert, OnUpdate, and OnDelete events of
+            // the ObjectDataSource control.
             MessageUserControl.HandleDataBoundException(e);
         }
-
     }
 }

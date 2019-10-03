@@ -4,13 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WestWindSystem.POCOs
+namespace WestWindSystem.ReadModels
 {
-
-    public class SupplierSumary
+    public class SupplierSummary
     {
         public string Company { get; set; }
-        public string Caegory { get; set; }
+        public string Contact { get; set; }
         public string Phone { get; set; }
         public IEnumerable<SupplierProduct> Products { get; set; }
     }

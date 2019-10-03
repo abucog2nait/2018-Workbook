@@ -83,7 +83,7 @@ namespace WestWindSystem.BLL
         [DataObjectMethod(DataObjectMethodType.Select)]
         public List<Address> ListAddresses()
         {
-            using (var context = new WestWindContext())
+            using(var context = new WestWindContext())
             {
                 return context.Addresses.ToList();
             }

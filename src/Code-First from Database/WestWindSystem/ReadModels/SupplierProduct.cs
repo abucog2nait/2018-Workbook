@@ -1,4 +1,4 @@
-﻿namespace WestWindSystem.POCOs
+﻿namespace WestWindSystem.ReadModels
 {
     public class SupplierProduct
     {
