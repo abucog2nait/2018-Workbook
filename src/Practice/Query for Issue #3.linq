@@ -8,7 +8,18 @@
   </Connection>
 </Query>
 
-// Lookup the category names, in alphabetical order
-from row in Categories
-orderby row.CategoryName // descending // uncomment for reverse alphabetical order
-select row.CategoryName
+/*
+Supplier:
+	Company Name
+	Contact Name
+	Phone Number
+	Product Summary:
+		Product Name
+		Category Name
+		Unit Price
+		Quantity/Unit
+*/
+from company in Suppliers
+select new
+{
+}
