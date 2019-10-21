@@ -73,14 +73,16 @@ from buyer in Customers
 group buyer by buyer.Address.City into cityvendors
 select new 
 {
-	City = cityVedors.Key,
-	Company = from company in CityVedors
+	City = cityvendors.Key,
+	Company = from company in cityvendors
 			  select new 
 			  {
 			  	company.CompanyName,
 				company.ContactName,
-				Company.ContactTitle,
+				company.ContactTitle,
 				company.Phone
 			  }
 }
 // F) List all the Suppliers, by Country
+from vendor in Suppliers 
+group vendor by vendor.Address.Country

@@ -75,3 +75,8 @@ select new
 }
 
 //I
+from vendor in Suppliers
+where vendor.Address.Country == "Canada"
+	|| vendor.Address.Country == "USA"
+	|| vendor.Address.Country == "Mexico"
+where vendor.CompanyName
