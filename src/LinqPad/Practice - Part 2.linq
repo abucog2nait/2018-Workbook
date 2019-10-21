@@ -1,7 +1,6 @@
 <Query Kind="Expression">
   <Connection>
     <ID>427b867e-be0d-4dfa-a844-3e8558a6934e</ID>
-    <Persist>true</Persist>
     <Server>.</Server>
     <Database>WestWind</Database>
   </Connection>
@@ -42,12 +41,46 @@ select new
 }
 
 
-// B) List all the Customers by Company Name. Include the Customer's company name, contact name, and other contact information in the result.
+// B) List all the Customers sorted by Company Name. Include the Customer's company name, contact name, and other contact information in the result.
+from vendor in Customers
+orderby
+select new 
+{
+	ComapanyName = vendor.CompanyName,
+	Contact = new //Didn't really need an object here, but hey... 
+	{
+		Name = vendor.ContactName,
+		Title = vendor.ContactTitle,
+		Email = vendor.ContactEmail,
+		Phone = vendor.ContactEmail,
+		Fax = vendor.Fax
+	}
+}	
 
 // C) List all the employees and sort the result in ascending order by last name, then first name. Show the employee's first and last name separately, along with the number of customer orders they have worked on.
-
+from person in Employees
+orderby person.LastName, person.FirstName
+select new 
+{
+	person.FirstName,
+	person.LastName,
+	OrderCount = person.SalesOrders.Count()
+}
 // D) List all the employees and sort the result in ascending order by last name, then first name. Show the employee's first and last name separately, along with the number of customer orders they have worked on.
 
 // E) Group all customers by city. Output the city name, aalong with the company name, contact name and title, and the phone number.
-
+from buyer in Customers 
+group buyer by buyer.Address.City into cityvendors
+select new 
+{
+	City = cityVedors.Key,
+	Company = from company in CityVedors
+			  select new 
+			  {
+			  	company.CompanyName,
+				company.ContactName,
+				Company.ContactTitle,
+				company.Phone
+			  }
+}
 // F) List all the Suppliers, by Country
