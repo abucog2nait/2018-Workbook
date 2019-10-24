@@ -1,8 +1,10 @@
 <Query Kind="Expression">
   <Connection>
-    <ID>427b867e-be0d-4dfa-a844-3e8558a6934e</ID>
+    <ID>d8601434-651c-4614-bcc3-fd77f5738ffb</ID>
+    <Persist>true</Persist>
     <Server>.</Server>
     <Database>WestWind</Database>
+    <ShowServer>true</ShowServer>
   </Connection>
 </Query>
 
@@ -43,7 +45,7 @@ select new
 
 // B) List all the Customers sorted by Company Name. Include the Customer's company name, contact name, and other contact information in the result.
 from vendor in Customers
-orderby
+orderby vendor.CompanyName
 select new 
 {
 	ComapanyName = vendor.CompanyName,
@@ -64,13 +66,13 @@ select new
 {
 	person.FirstName,
 	person.LastName,
-	OrderCount = person.SalesOrders.Count()
+	OrderCount = person.SalesRepOrders.Count()
 }
 // D) List all the employees and sort the result in ascending order by last name, then first name. Show the employee's first and last name separately, along with the number of customer orders they have worked on.
 
 // E) Group all customers by city. Output the city name, aalong with the company name, contact name and title, and the phone number.
 from buyer in Customers 
-group buyer by buyer.Address.City into cityvendors
+group buyer by buyer.City into cityvendors
 select new 
 {
 	City = cityvendors.Key,
@@ -84,5 +86,6 @@ select new
 			  }
 }
 // F) List all the Suppliers, by Country
-from vendor in Suppliers 
-group vendor by vendor.Address.Country
+from vendor in Suppliers
+group vendor by vendor.Country into supcon
+select supcon 
