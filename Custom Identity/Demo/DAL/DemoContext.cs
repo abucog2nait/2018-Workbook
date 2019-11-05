@@ -6,8 +6,8 @@ namespace Demo.DAL
     using System.Linq;
     using Demo.Entities;
 
-    public partial class DemoContext : DbContext
-    {
+    internal partial class DemoContext : DbContext
+    { //internal to make it more secure. cannot access it from the presentation layer. 
         public DemoContext()
             : base("name=DefaultConnection")
         {
