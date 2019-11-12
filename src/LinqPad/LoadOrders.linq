@@ -17,6 +17,7 @@ void scratchpad()
 		OrderDate = ord.OrderDate.Value,
 		RequiredBy = ord.RequiredDate.Value,
 		OutstandingItems = from detail in ord.OrderDetails
+							where detail.Product.Supplier == supplierid
 							select new OrderProductInformation 
 							{
 								ProductId = detail.ProductID,

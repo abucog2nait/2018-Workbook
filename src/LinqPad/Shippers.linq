@@ -17,17 +17,16 @@ void Main()
 // Define other methods and classes here
         public List<ShipperSelection> ListShippers()
         {
-            throw new NotFiniteNumberException();
             /*
              * Queries for all the shippers.
              */
-			 var result = from shipper in Shippper 
+			 var result = from shipper in Shippers
 			 				select new ShipperSelection
 							{
-								Shipperid = shipper.ShipperID,
+								ShipperId = shipper.ShipperID,
 								Shipper = shipper.CompanyName
 							};
-			return results.ToList();
+			return result.ToList();
         }
 public class ShipperSelection
 {
