@@ -54,38 +54,15 @@ public class OutstandingOrder
     public string Comments { get; set; }
 }
 ```
-
-```csharp
-public class OrderProductInformation
-{
-    public int ProductId {get;set;}
-    public string ProductName {get;set;}
-    public short Qty {get;set;}
-    public string QtyPerUnit {get;set;}
-    public short Outstanding {get;set;}
-    // NOTE: Outstanding <= OrderDetails.Quantity - Sum(ManifestItems.ShipQuantity) for that product/order
-}
-```
-
 ### Commands
 
 ```csharp
-public class ShippingDirections
+public class QuantityPicked
 {
-    public int ShipperId { get; set; }
-    public string TrackingCode { get; set; }
-    public decimal? FreightCharge { get; set; }
+    public int OrderID { get; set; }
+    public string ActualQtyPicked { get; set; }
 }
 ```
-
-```csharp
-public class ProductShipment
-{
-    public int ProductId { get; set; }
-    public int ShipQuantity { get; set; }
-}
-```
-
 ## BLL Processing
 
 All product shipments are handled by the **`OrderProcessingController`**. It supports the following methods.
