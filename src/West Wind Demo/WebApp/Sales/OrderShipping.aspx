@@ -1,5 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="OrderShipping.aspx.cs" Inherits="WebApp.Sales.OrderShipping" %>
 
+<%@ Register Src="~/UserControls/MessageUserControl.ascx" TagPrefix="uc1" TagName="MessageUserControl" %>
+
+
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h1 class="page-header">Order Shipping</h1>
 
@@ -11,8 +14,11 @@
                 <asp:Literal ID="SupplierInfo" runat="server" />
             </p>
 
+            <uc1:MessageUserControl runat="server" ID="MessageUserControl" />
+
             <asp:ListView ID="CurrentOrders" runat="server"
                 DataSourceID="OrdersDataSource"
+                OnItemCommand="CurrentOrders_ItemCommand"
                 ItemType="WestWindSystem.DataModels.OutstandingOrder">
                 <EditItemTemplate>
                     <tr class="bg-info">
@@ -39,7 +45,7 @@
                                 DataSourceID="ShippersDataSource"
                                 DataTextField="Shipper" DataValueField="ShipperId"
                                 AppendDataBoundItems="true">
-                                <asp:ListItem Value="">[Select a Shipper]</asp:ListItem>
+                                <asp:ListItem Value="0">[Select a Shipper]</asp:ListItem>
                             </asp:DropDownList>
                             <asp:GridView ID="ProductsGridView" runat="server"
                                 CssClass="table table-hover table-condensed"
@@ -54,6 +60,8 @@
                                     <asp:BoundField DataField="Outstanding" HeaderText="Outstanding" />
                                     <asp:TemplateField HeaderText="Ship Quantity">
                                         <ItemTemplate>
+                                            <asp:HiddenField ID="ProdId" runat="server"
+                                                Value="<%# Item.ProductId %>" />
                                             <asp:TextBox ID="ShipQuantity" runat="server" />
                                         </ItemTemplate>
                                     </asp:TemplateField>
